@@ -1,7 +1,7 @@
 package Plugins::SuperDateTimeMacroExtender::Plugin;
 
 # ============================================================================
-# SuperDateTime Macro Extender Plugin for Logitech Media Server
+# SuperDateTime Macro Extender Plugin for Lyrion Music Server
 # ============================================================================
 # This plugin extends SuperDateTime/Custom Clock functionality by fetching
 # data from JSON endpoints and making it available via custom macros.

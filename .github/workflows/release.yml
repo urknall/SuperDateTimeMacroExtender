@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repository Master
         uses: actions/checkout@v4
         with:
-           ref: master
+           ref: main
 
       - name: Checkout lms-repo gh-pages
         uses: actions/checkout@v4

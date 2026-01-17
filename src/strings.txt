@@ -1,0 +1,125 @@
+# English/German strings
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER
+	EN	SuperDateTime Macro Extender
+	DE	SuperDateTime Macro Extender
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_DESC
+	EN	Fetches values from one or more JSON endpoints and makes them available to SuperDateTime/Custom Clock via sdtMacroString chaining.
+	DE	Holt Werte von einem oder mehreren JSON-Endpunkten und stellt sie SuperDateTime/Custom Clock über sdtMacroString-Chaining bereit.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS
+	EN	SuperDateTime Macro Extender
+	DE	SuperDateTime Macro Extender
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_URLS
+	EN	JSON URLs
+	DE	JSON-URLs
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_URLS_DESC
+	EN	Enter one or more JSON URLs. The plugin fetches ALL of them (in order) and merges the results so macros from every endpoint are available.
+	DE	Trage eine oder mehrere JSON-URLs ein. Das Plugin holt ALLE Endpunkte (der Reihe nach) und fügt die Ergebnisse zusammen, sodass Makros aus allen Quellen verfügbar sind.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_URL_INVALID
+	EN	Warning: Some URLs were not saved because they do not start with http:// or https://. Only valid URLs are shown above.
+	DE	Warnung: Einige URLs wurden nicht gespeichert, da sie nicht mit http:// oder https:// beginnen. Oben werden nur gültige URLs angezeigt.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_HELP
+	EN	Macros: ~e<id>~<field>~[func]~[arg]~ (id from result[].id); also ~i<idx>~ and ~n<Name>~. Functions: round, truncate, ceil, floor, shorten.
+	DE	Makros: ~e<id>~<field>~[func]~[arg]~ (id aus result[].id); auch ~i<idx>~ und ~n<Name>~. Funktionen: round, truncate, ceil, floor, shorten.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_TIP
+	EN	Tip: You can enter multiple URLs. The plugin will fetch all of them and merge the data.
+	DE	Tipp: Du kannst mehrere URLs eintragen. Das Plugin holt alle und fügt die Daten zusammen.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_TITLE
+	EN	JSON endpoint format
+	DE	JSON-Endpunkt-Format
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_INTRO
+	EN	Provide a JSON document with a top-level "result" array. Each element in result[] is a record whose fields can be used in macros.
+	DE	Stelle ein JSON-Dokument mit einem "result"-Array auf oberster Ebene bereit. Jedes Element in result[] ist ein Datensatz, dessen Felder in Makros verwendet werden können.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_NOTE_MULTIURL
+	EN	Multiple URLs are supported. The plugin fetches them in order and merges their result[] records. If the same id/idx/Name exists multiple times, the entire record from the later URL replaces the earlier one completely (fields are not merged).
+	DE	Mehrere URLs werden unterstützt. Das Plugin holt sie der Reihe nach und fügt die result[]-Datensätze zusammen. Wenn id/idx/Name mehrfach vorkommt, ersetzt der vollständige Datensatz der späteren URL den früheren komplett (Felder werden nicht zusammengeführt).
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_FIELDS
+	EN	Lookups: use result[].id for ~e...~, result[].idx for ~i...~, and result[].Name for ~n...~. For values you can expose any fields you like (e.g. Value, Data, Unit, ValueInt).
+	DE	Zuordnung: result[].id für ~e...~, result[].idx für ~i...~ und result[].Name für ~n...~. Als Werte kannst du beliebige Felder bereitstellen (z.B. Value, Data, Unit, ValueInt).
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_RAW
+	EN	Alternative formats: Instead of "result", you can use {"raw": {"1": 12.3, "2": "On"}} or provide key-value pairs at the root level {"1": 12.3, "2": "On"}. In these formats, each key becomes a record with Name="Key_<k>", id=<k>, idx=<k> (if numeric), and Value=<v>.
+	DE	Alternative Formate: Statt "result" kannst du {"raw": {"1": 12.3, "2": "On"}} verwenden oder Schlüssel-Wert-Paare auf oberster Ebene {"1": 12.3, "2": "On"}. In diesen Formaten wird jeder Schlüssel zu einem Datensatz mit Name="Key_<k>", id=<k>, idx=<k> (falls numerisch) und Value=<v>.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_TITLE
+	EN	Macro usage
+	DE	Makro-Verwendung
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_INTRO
+	EN	Use these macros inside SuperDateTime / Custom Clock strings (processed via sdtMacroString chaining):
+	DE	Diese Makros kannst du in SuperDateTime-/Custom-Clock-Strings verwenden (werden über sdtMacroString-Chaining verarbeitet):
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_NOTE_CHAINING
+	EN	The plugin only replaces its own macros and then chains to SuperDateTime so SDT macros still work as usual.
+	DE	Das Plugin ersetzt nur seine eigenen Makros und leitet danach an SuperDateTime weiter, sodass SDT-Makros wie gewohnt funktionieren.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_E
+	EN	~e<id>~<field>~[func]~[arg]~  (lookup by result[].id)
+	DE	~e<id>~<field>~[func]~[arg]~  (Zuordnung über result[].id)
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_I
+	EN	~i<idx>~<field>~[func]~[arg]~ (lookup by result[].idx)
+	DE	~i<idx>~<field>~[func]~[arg]~ (Zuordnung über result[].idx)
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_N
+	EN	~n<Name>~<field>~[func]~[arg]~ (lookup by result[].Name, case-sensitive)
+	DE	~n<Name>~<field>~[func]~[arg]~ (Zuordnung über result[].Name, Groß-/Kleinschreibung wird beachtet)
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_NOTE
+	EN	Note: Name lookup (~n...~) is case-sensitive and must match exactly. Field names are case-insensitive with fallback.
+	DE	Hinweis: Name-Zuordnung (~n...~) beachtet Groß-/Kleinschreibung und muss exakt übereinstimmen. Feldnamen sind Groß-/Kleinschreibungs-unabhängig mit Fallback.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EXAMPLES_TITLE
+	EN	Examples
+	DE	Beispiele
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX1
+	EN	Outside temperature as integer from JSON: ~eTempA~ValueInt~
+	DE	Außentemperatur als Ganzzahl aus JSON: ~eTempA~ValueInt~
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX2
+	EN	Outside temperature rounded by function: ~eTempA~Value~round~0~
+	DE	Außentemperatur per Funktion gerundet: ~eTempA~Value~round~0~
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX3
+	EN	Formatted string (with unit): ~eTempA~Data~
+	DE	Formatierter String (mit Einheit): ~eTempA~Data~
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX4
+	EN	Lookup by index: ~i1~Data~
+	DE	Zuordnung über Index: ~i1~Data~
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_FUNCTIONS
+	EN	Supported functions: round, truncate, ceil, floor (numeric values), shorten (strings). Unknown fields are left unchanged. If an unknown function is specified, the macro is replaced up to the field, and the rest is treated as literal text.
+	DE	Unterstützte Funktionen: round, truncate, ceil, floor (Zahlenwerte), shorten (Strings). Unbekannte Felder bleiben unverändert. Wenn eine unbekannte Funktion angegeben wird, wird das Makro bis zum Feld ersetzt, und der Rest wird als wörtlicher Text behandelt.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_TRUNCATE_NOTE
+	EN	Note: truncate cuts decimal places toward zero (e.g., 3.7→3, -3.7→-3). Use floor for rounding toward negative infinity.
+	DE	Hinweis: truncate schneidet Dezimalstellen Richtung Null ab (z.B. 3.7→3, -3.7→-3). Verwende floor für Abrundung Richtung minus unendlich.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_CACHE_MODE
+	EN	Cache Strategy
+	DE	Cache-Strategie
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_CACHE_MODE_DESC
+	EN	Choose how data is cached: Server-Wide (default, shared cache reduces API load when multiple players use the same data), or Per-Client (each player has its own cache and fetches).
+	DE	Wähle, wie Daten gecacht werden: Serverweit (Standard, geteilter Cache reduziert API-Last, wenn mehrere Player dieselben Daten nutzen), oder Pro-Client (jeder Player hat seinen eigenen Cache und holt Daten).
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_CACHE_MODE_CLIENT
+	EN	Per-Client (separate cache per player, no data sharing)
+	DE	Pro-Client (separater Cache pro Player, keine Datenteilung)
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_CACHE_MODE_SERVER
+	EN	Server-Wide (default, shared cache, reduced API load)
+	DE	Serverweit (Standard, geteilter Cache, reduzierte API-Last)

@@ -1,0 +1,18 @@
+<?xml version='1.0' standalone='yes'?>
+<extension>
+  <name>PLUGIN_SUPERDATETIMEMACROEXTENDER</name>
+  <creator>Reiner Paulus</creator>
+  <defaultState>enabled</defaultState>
+  <description>PLUGIN_SUPERDATETIMEMACROEXTENDER_DESC</description>
+  <homepageURL>https://github.com/urknall/SuperDateTimeMacroExtender</homepageURL>
+  <optionsURL>plugins/SuperDateTimeMacroExtender/settings/basic.html</optionsURL>
+  <id>9C7C4E18-9B8D-4B6A-9B7A-1E2F9B2A6A11</id>
+  <module>Plugins::SuperDateTimeMacroExtender::Plugin</module>
+  <targetApplication>
+    <id>SqueezeCenter</id>
+    <minVersion>7.4</minVersion>
+    <maxVersion>*</maxVersion>
+  </targetApplication>
+  <type>2</type>
+  <version>1.0</version>
+</extension>

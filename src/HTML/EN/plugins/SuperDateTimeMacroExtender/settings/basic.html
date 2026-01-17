@@ -1,0 +1,75 @@
+[% PROCESS settings/header.html %]
+
+[% WRAPPER settingSection title="PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS" %]
+
+	[% WRAPPER settingGroup title="PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS" desc="PLUGIN_SUPERDATETIMEMACROEXTENDER_DESC" %]
+
+		[% IF warning && invalid_urls && invalid_urls.size > 0 %]
+			<div style="background-color: #fff3cd; border: 1px solid #ffc107; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+				<strong>[% warning | string %]</strong>
+				<ul style="margin: 5px 0 0 20px;">
+					[% FOREACH url IN invalid_urls %]
+						<li>[% url | html %]</li>
+					[% END %]
+				</ul>
+			</div>
+		[% END %]
+
+		[% WRAPPER setting title="PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_CACHE_MODE" desc="PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_CACHE_MODE_DESC" %]
+			<select class="stdedit" name="pref_cache_mode">
+				<option value="server"[% IF prefs.cache_mode == 'server' || !prefs.cache_mode %] selected[% END %]>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_CACHE_MODE_SERVER" | string %]</option>
+				<option value="client"[% IF prefs.cache_mode == 'client' %] selected[% END %]>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_CACHE_MODE_CLIENT" | string %]</option>
+			</select>
+		[% END %]
+
+		[% WRAPPER setting title="PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_URLS" desc="PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_URLS_DESC" %]
+			<div>
+				[% FOREACH f IN api_url_fields %]
+					<input type="text" class="stdedit" name="pref_api_url_[% loop.index %]" value="[% f.value | html %]" size="80" /><br/>
+				[% END %]
+				<p style="margin-top:6px;">
+					[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_TIP" | string %]
+				</p>
+			</div>
+		[% END %]
+
+		<h3>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_TITLE" | string %]</h3>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_INTRO" | string %]</p>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_NOTE_MULTIURL" | string %]</p>
+		<pre style="white-space:pre-wrap; max-width: 100%;">
+{
+  "status": "OK",
+  "timestamp": "2024-01-01T12:00:00+01:00",
+  "result": [
+    { "id": "TempA", "idx": 1, "Name": "TempA", "Value": 3.4, "ValueInt": 3, "Data": "3.4 dgC" },
+    { "id": "Power", "idx": 4, "Name": "Power", "Value": 55, "Data": "55 %" }
+  ]
+}
+		</pre>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_FIELDS" | string %]</p>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_RAW" | string %]</p>
+		<br/>
+		<h3>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_TITLE" | string %]</h3>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_INTRO" | string %]</p>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_NOTE_CHAINING" | string %]</p>
+		<ul>
+			<li>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_E" | string %]</li>
+			<li>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_I" | string %]</li>
+			<li>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_N" | string %]</li>
+		</ul>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_NOTE" | string %]</p>
+		<br/>
+		<h3>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EXAMPLES_TITLE" | string %]</h3>
+		<ul>
+			<li>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX1" | string %]</li>
+			<li>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX2" | string %]</li>
+			<li>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX3" | string %]</li>
+			<li>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX4" | string %]</li>
+		</ul>
+		<p>[% "PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_FUNCTIONS" | string %]</p>
+
+	[% END %]
+
+[% END %]
+
+[% PROCESS settings/footer.html %]

@@ -25,8 +25,8 @@ PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_URL_INVALID
 	DE	Warnung: Einige URLs wurden nicht gespeichert, da sie nicht mit http:// oder https:// beginnen. Oben werden nur gültige URLs angezeigt.
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_HELP
-	EN	Macros: ~e<id>~<field>~[func]~[arg]~ (id from result[].id); also ~i<idx>~ and ~n<Name>~. Functions: round, truncate, ceil, floor, shorten.
-	DE	Makros: ~e<id>~<field>~[func]~[arg]~ (id aus result[].id); auch ~i<idx>~ und ~n<Name>~. Funktionen: round, truncate, ceil, floor, shorten.
+	EN	Macros: ~e&lt;id&gt;~&lt;field&gt;~[func]~[arg]~ (id from result[].id); also ~i&lt;idx&gt;~ and ~n&lt;Name&gt;~. Functions: round, truncate, ceil, floor, shorten.
+	DE	Makros: ~e&lt;id&gt;~&lt;field&gt;~[func]~[arg]~ (id aus result[].id); auch ~i&lt;idx&gt;~ und ~n&lt;Name&gt;~. Funktionen: round, truncate, ceil, floor, shorten.
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_TIP
 	EN	Tip: You can enter multiple URLs. The plugin will fetch all of them and merge the data.
@@ -49,8 +49,8 @@ PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_FIELDS
 	DE	Zuordnung: result[].id für ~e...~, result[].idx für ~i...~ und result[].Name für ~n...~. Als Werte kannst du beliebige Felder bereitstellen (z.B. Value, Data, Unit, ValueInt).
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_JSON_RAW
-	EN	Alternative formats: Instead of "result", you can use {"raw": {"1": 12.3, "2": "On"}} or provide key-value pairs at the root level {"1": 12.3, "2": "On"}. In these formats, each key becomes a record with Name="Key_<k>", id=<k>, idx=<k> (if numeric), and Value=<v>.
-	DE	Alternative Formate: Statt "result" kannst du {"raw": {"1": 12.3, "2": "On"}} verwenden oder Schlüssel-Wert-Paare auf oberster Ebene {"1": 12.3, "2": "On"}. In diesen Formaten wird jeder Schlüssel zu einem Datensatz mit Name="Key_<k>", id=<k>, idx=<k> (falls numerisch) und Value=<v>.
+	EN	Alternative formats: Instead of "result", you can use {"raw": {"1": 12.3, "2": "On"}} or provide key-value pairs at the root level {"1": 12.3, "2": "On"}. In these formats, each key becomes a record with Name="Key_&lt;k&gt;", id=&lt;k&gt;, idx=&lt;k&gt; (if numeric), and Value=&lt;v&gt;.
+	DE	Alternative Formate: Statt "result" kannst du {"raw": {"1": 12.3, "2": "On"}} verwenden oder Schlüssel-Wert-Paare auf oberster Ebene {"1": 12.3, "2": "On"}. In diesen Formaten wird jeder Schlüssel zu einem Datensatz mit Name="Key_&lt;k&gt;", id=&lt;k&gt;, idx=&lt;k&gt; (falls numerisch) und Value=&lt;v&gt;.
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_TITLE
 	EN	Macro usage
@@ -65,16 +65,16 @@ PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_NOTE_CHAINING
 	DE	Das Plugin ersetzt nur seine eigenen Makros und leitet danach an SuperDateTime weiter, sodass SDT-Makros wie gewohnt funktionieren.
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_E
-	EN	~e<id>~<field>~[func]~[arg]~  (lookup by result[].id)
-	DE	~e<id>~<field>~[func]~[arg]~  (Zuordnung über result[].id)
+	EN	~e&lt;id&gt;~&lt;field&gt;~[func]~[arg]~  (lookup by result[].id)
+	DE	~e&lt;id&gt;~&lt;field&gt;~[func]~[arg]~  (Zuordnung über result[].id)
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_I
-	EN	~i<idx>~<field>~[func]~[arg]~ (lookup by result[].idx)
-	DE	~i<idx>~<field>~[func]~[arg]~ (Zuordnung über result[].idx)
+	EN	~i&lt;idx&gt;~&lt;field&gt;~[func]~[arg]~ (lookup by result[].idx)
+	DE	~i&lt;idx&gt;~&lt;field&gt;~[func]~[arg]~ (Zuordnung über result[].idx)
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_N
-	EN	~n<Name>~<field>~[func]~[arg]~ (lookup by result[].Name, case-sensitive)
-	DE	~n<Name>~<field>~[func]~[arg]~ (Zuordnung über result[].Name, Groß-/Kleinschreibung wird beachtet)
+	EN	~n&lt;Name&gt;~&lt;field&gt;~[func]~[arg]~ (lookup by result[].Name, case-sensitive)
+	DE	~n&lt;Name&gt;~&lt;field&gt;~[func]~[arg]~ (Zuordnung über result[].Name, Groß-/Kleinschreibung wird beachtet)
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MACROS_NOTE
 	EN	Note: Name lookup (~n...~) is case-sensitive and must match exactly. Field names are case-insensitive with fallback.
@@ -100,13 +100,21 @@ PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX4
 	EN	Lookup by index: ~i1~Data~
 	DE	Zuordnung über Index: ~i1~Data~
 
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX5
+	EN	Round to nearest 10: ~eTempA~Value~round~-1~
+	DE	Auf nächste 10 runden: ~eTempA~Value~round~-1~
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_EX6
+	EN	Truncate to nearest 100: ~ePower~Value~truncate~-2~
+	DE	Auf nächste 100 abschneiden: ~ePower~Value~truncate~-2~
+
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_FUNCTIONS
 	EN	Supported functions: round, truncate, ceil, floor (numeric values), shorten (strings). Unknown fields are left unchanged. If an unknown function is specified, the macro is replaced up to the field, and the rest is treated as literal text.
 	DE	Unterstützte Funktionen: round, truncate, ceil, floor (Zahlenwerte), shorten (Strings). Unbekannte Felder bleiben unverändert. Wenn eine unbekannte Funktion angegeben wird, wird das Makro bis zum Feld ersetzt, und der Rest wird als wörtlicher Text behandelt.
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_TRUNCATE_NOTE
-	EN	Note: truncate cuts decimal places toward zero (e.g., 3.7→3, -3.7→-3). Use floor for rounding toward negative infinity.
-	DE	Hinweis: truncate schneidet Dezimalstellen Richtung Null ab (z.B. 3.7→3, -3.7→-3). Verwende floor für Abrundung Richtung minus unendlich.
+	EN	Note: truncate cuts decimal places toward zero (e.g., 3.7→3, -3.7→-3). Use floor for rounding toward negative infinity. Both round and truncate support negative arguments for rounding to tens, hundreds, etc. (e.g., round with -1 rounds to nearest 10, truncate with -2 truncates to nearest 100).
+	DE	Hinweis: truncate schneidet Dezimalstellen Richtung Null ab (z.B. 3.7→3, -3.7→-3). Verwende floor für Abrundung Richtung minus unendlich. Sowohl round als auch truncate unterstützen negative Argumente zum Runden auf Zehner, Hunderter usw. (z.B. round mit -1 rundet auf die nächsten 10, truncate mit -2 schneidet auf die nächsten 100 ab).
 
 PLUGIN_SUPERDATETIMEMACROEXTENDER_SETTINGS_CACHE_MODE
 	EN	Cache Strategy
@@ -123,3 +131,35 @@ PLUGIN_SUPERDATETIMEMACROEXTENDER_CACHE_MODE_CLIENT
 PLUGIN_SUPERDATETIMEMACROEXTENDER_CACHE_MODE_SERVER
 	EN	Server-Wide (default, shared cache, reduced API load)
 	DE	Serverweit (Standard, geteilter Cache, reduzierte API-Last)
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_CACHE_TITLE
+	EN	Caching and Resilience
+	DE	Caching und Ausfallsicherheit
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_CACHE_TTL
+	EN	Data is cached for 60 seconds to reduce API load. HTTP requests timeout after 10 seconds.
+	DE	Daten werden 60 Sekunden lang gecacht, um die API-Last zu reduzieren. HTTP-Anfragen haben eine Zeitüberschreitung von 10 Sekunden.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_CACHE_FALLBACK
+	EN	If all API fetches fail, the plugin automatically falls back to cached data if it's less than 5 minutes old. This ensures continued operation during temporary API outages.
+	DE	Wenn alle API-Abrufe fehlschlagen, verwendet das Plugin automatisch gecachte Daten, wenn diese weniger als 5 Minuten alt sind. Dies gewährleistet den Betrieb während temporärer API-Ausfälle.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_CACHE_SERVER_DETAIL
+	EN	Server-Wide mode: All clients share the same cached data when using identical URL sets (matched by MD5 hash). This minimizes API requests.
+	DE	Serverweit-Modus: Alle Clients teilen sich die gleichen gecachten Daten bei identischen URL-Sets (abgeglichen per MD5-Hash). Dies minimiert API-Anfragen.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_RAW_SORTING
+	EN	In raw format, keys are sorted numerically when possible (e.g., 1, 2, 10 instead of 1, 10, 2), ensuring proper ordering.
+	DE	Im Raw-Format werden Schlüssel numerisch sortiert, wenn möglich (z.B. 1, 2, 10 statt 1, 10, 2), um die richtige Reihenfolge zu gewährleisten.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_FIELD_CASE
+	EN	Field names are matched case-insensitively with fallback. The lookup first tries an exact match, then falls back to case-insensitive matching (e.g., "Value", "value", and "VALUE" all match).
+	DE	Feldnamen werden Groß-/Kleinschreibungs-unabhängig mit Fallback abgeglichen. Die Suche versucht zuerst eine exakte Übereinstimmung, dann eine Groß-/Kleinschreibungs-unabhängige Suche (z.B. "Value", "value" und "VALUE" passen alle).
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_MERGE_DETAIL
+	EN	When multiple URLs provide records with the same id/idx/Name, the entire record from the later URL replaces the earlier one completely. Example: If URL1 has {id: "TempA", Value: 10} and URL2 has {id: "TempA", Data: "cold"}, the final result is ONLY {id: "TempA", Data: "cold"}. Fields are not merged individually.
+	DE	Wenn mehrere URLs Datensätze mit gleicher id/idx/Name liefern, ersetzt der gesamte Datensatz der späteren URL den früheren vollständig. Beispiel: Wenn URL1 {id: "TempA", Value: 10} hat und URL2 {id: "TempA", Data: "cold"}, ist das Endergebnis NUR {id: "TempA", Data: "cold"}. Felder werden nicht einzeln zusammengeführt.
+
+PLUGIN_SUPERDATETIMEMACROEXTENDER_HELP_ERROR_HANDLING
+	EN	The plugin is resilient to errors: invalid JSON responses are logged and skipped, malformed URLs are skipped, and one endpoint failure doesn't prevent fetching from other endpoints.
+	DE	Das Plugin ist fehlertolerant: ungültige JSON-Antworten werden protokolliert und übersprungen, fehlerhafte URLs werden übersprungen, und der Ausfall eines Endpunkts verhindert nicht das Abrufen von anderen Endpunkten.

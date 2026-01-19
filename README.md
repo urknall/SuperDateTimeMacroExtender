@@ -59,7 +59,6 @@ Navigate to: **Settings → Plugins → SuperDateTime Macro Extender**
    ```
    http://192.168.1.100:8080/json.htm?type=devices&used=true
    https://api.example.com/sensors/current
-   http://homeassistant.local:8123/api/states
    ```
 
 ### Cache Strategy

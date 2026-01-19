@@ -512,6 +512,11 @@ The settings page shows warnings for invalid URLs:
 
 ### Home Assistant Format (adapted)
 
+IMPORTANT: does not work out of the box with the plugin:
+
+Use a REST wrapper (e.g., Node-RED / small script) that queries Home Assistant’s /api/states/<entity_id> endpoints with
+a Long-Lived Access Token and returns the values as the plugin’s expected {"result":[{"id","Name","Value","Data","Unit"}...]} JSON.​​
+
 ```json
 {
   "result": [
